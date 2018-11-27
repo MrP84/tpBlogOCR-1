@@ -9,7 +9,7 @@ export class PostComponent implements OnInit {
 
   @Input() postTitle: string;
   @Input() postContent: string;
-  @Input() loveIts: integer;
+  @Input() loveIts;
 
   creationDate = new Date();
 
