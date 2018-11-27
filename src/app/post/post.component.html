@@ -1,0 +1,28 @@
+<!-- Modification de la classe en fonction du nombre de likes -->
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts >= 0,
+                'list-group-item-danger' : loveIts < 0}">
+<!-- une classe flex et pour la disposition -->
+  <div class="flex">
+    <!-- Récupération des valeurs de titre et de contenu -->
+    <h4>{{ postTitle }} </h4>
+    <!-- pipe pour la date, format imposé -->
+    <div>{{ creationDate | date: 'd-M-y, HH:mm:ss' }}</div>
+  </div>
+  <p>
+    {{ postContent }}
+  </p>
+
+  <div class="flex">
+    <div>
+      <!-- boutons qui appellent des fonctions dans post.component.tscreationDate -->
+      <button class="btn btn-success"
+              (click)="onLike();">Love it !</button>
+      <button class="btn btn-danger"
+              (click)="onDislike();">Don't love it !</button>
+    </div>
+    <div>
+      <span><i class="fa fa-thumbs-o-up"></i> {{ loveIts }}</span>
+    </div>
+  </div>
+</li>
